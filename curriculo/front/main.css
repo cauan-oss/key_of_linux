@@ -13,3 +13,12 @@ p {
     text-align: center;
 }
 
+#block-one {
+    margin: 50px;
+    background-color: blue;
+}
+
+#block-two {
+    background-color: brown;
+    margin: 100px;
+}
