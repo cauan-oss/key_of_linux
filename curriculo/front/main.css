@@ -1,0 +1,15 @@
+.textao {
+    color: chartreuse;
+   font-family: "Fira Code", "Source Code Pro", "Cascadia Code", "Hack", "Inconsolata", "JetBrains Mono", monospace;
+   text-align: center
+}
+
+body {
+    background-color: #0A0A0A;
+}
+p {
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}
+
