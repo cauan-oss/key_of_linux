@@ -1,11 +1,15 @@
 .textao {
     color: chartreuse;
    font-family: "Fira Code", "Source Code Pro", "Cascadia Code", "Hack", "Inconsolata", "JetBrains Mono", monospace;
-   text-align: center
+   text-align: center;
+    
 }
 
 body {
-    background-color: #0A0A0A;
+    margin: 0;
+    padding: 0;
+    
+    background-color: #a99696;
     overflow: auto;
 }
 p {
@@ -13,12 +17,19 @@ p {
     font-family: sans-serif;
     text-align: center;
 }
+li:hover {
+    background-color: white;
+}
+
+li:active {
+    color: red;
+}
 
 #block-one {
-    margin: 150px;
+   
     background-color: blue;
     padding: 30px;
-    border-radius: 20px;
+    
 }
 
 #block-two {
@@ -26,4 +37,14 @@ p {
     border-radius: 20px;
     background-color: brown;
     margin: 100px;
+}
+
+.titulo-container {
+    border: 1px solid white;
+    margin: 15px;
+}
+
+#container-dois {
+    border: 1px solid white;
+    margin: 15px;
 }
