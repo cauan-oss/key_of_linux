@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F0F2F5;
+}
+#cabecalho {
+    background-color: #2D4A22;
+    padding: 40px;
+    width: 1440;
+    height: 238;
+}
+
+.receita {
+    width: 352px;
+    height: 138px;
+    border-radius: 10px; 
+    background-color: #ffff;
+    padding: 10px;
+    margin: 10px;
+    color: #363F5F;
+    margin-left: 20px;
+    
+}
+.receita-total {
+    width: 352px;
+    height: 138px;
+    border-radius: 10px; 
+    background-color: #49AA26;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    margin-left: 20px;
+    
+}
+
+#engloba {
+    display: flex;
+    justify-content: center;
+    top: 50px;
+    position: absolute;
+    left: 350px;
+}
+ h1 {
+    top: 10px;
+} 
+
+#conteudo-principal {
+    margin: 40px;
+    width: 1440px;
+    height: 324px;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    font-family: 'Poppins';
+}
