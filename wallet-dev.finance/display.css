@@ -3,3 +3,24 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.container {
+    background-color: #1e293b;
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    display: flex; 
+    
+    
+}
+
+.item {
+    background-color: #7e22ce;
+    color: white;
+    margin: 10px;
+    height: 90px;
+    width: 90px;
+    font-size: 22px;
+    border-radius: 5px;
+   
+}
