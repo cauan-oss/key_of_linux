@@ -3,6 +3,7 @@ body {
     padding: 0;
     background-color: #F0F2F5;
 }
+
 #cabecalho {
     background-color: #2D4A22;
     padding: 40px;
@@ -13,24 +14,26 @@ body {
 .receita {
     width: 352px;
     height: 138px;
-    border-radius: 10px; 
+    border-radius: 10px;
     background-color: #ffff;
     padding: 10px;
     margin: 10px;
     color: #363F5F;
     margin-left: 20px;
-    
+    font-family: Poppins;
+
 }
+
 .receita-total {
     width: 352px;
     height: 138px;
-    border-radius: 10px; 
+    border-radius: 10px;
     background-color: #49AA26;
     padding: 10px;
     margin: 10px;
     color: white;
     margin-left: 20px;
-    
+
 }
 
 #engloba {
@@ -40,9 +43,10 @@ body {
     position: absolute;
     left: 350px;
 }
- h1 {
+
+h1 {
     top: 10px;
-} 
+}
 
 #conteudo-principal {
     margin: 40px;
@@ -50,10 +54,10 @@ body {
     height: 324px;
 }
 
-.linha {
+/* .linha {
     background-color: red;
     padding: 25px;
-}
+} */
 
 .extrato {
     background-color: hsl(0, 37%, 56%);
@@ -62,24 +66,44 @@ body {
     border-radius: 10px;
 }
 
-#head-table {
-    display: flex;
-    justify-content: space-between;
-    margin: 100px;
-}
+
 
 #tabela {
-    margin-top: 150px;
+    margin-top: 50px;
+    width: 100%;
+    padding: 30px;
+    padding-left: 450px;
+    border-spacing: 0 0.5rem;
+    text-align: left;
+    border-radius: 10px;
+   
 }
 
-#rodape{
+table th {
+   color: #969CB2;
+}
+table td{
+    padding: 20px;
+    background: white;
+    width: 1120px;
+    height: 34px;
+    color: #363F5F;
+    font-family: Poppins;
+   
+}
+
+ #rodape {
+    margin: 150px;
+    display: flex;
+    justify-content: center;
+} 
+
+/* .centraliza {
+    display: flex;
+    justify-content: center;
+} */
+
+.elemento1 {
     display: flex;
     justify-content: center;
 }
-/* .lista {
-    margin-top: 10px;
-} */
-
-
- 
-

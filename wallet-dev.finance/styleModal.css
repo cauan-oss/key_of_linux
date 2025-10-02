@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* #botoes {
+    display: inline;
+    justify-content: center;
+    background-color: green;
+} */
+
+#modal {
+    background-color: beige;
+    padding: 12px;
+    margin: 350px;
+    /* display: flex;
+    justify-content: center; */
+}
+h1 {
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+
+#inputs-data {
+  display: flex;
+  justify-content: center;
+  padding: 70px;
+  gap: 15px
+} 
+
+#botoes {
+    display: flex;
+
+    
+}
