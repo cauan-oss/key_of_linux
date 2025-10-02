@@ -50,12 +50,9 @@ body {
     height: 324px;
 }
 
-#title {
-    margin-top: 150px;
-    margin-bottom: 10px;
-     display: flex;
-    justify-content: space-between;
-    padding-left: 100px; */
+.linha {
+    background-color: red;
+    padding: 25px;
 }
 
 .extrato {
@@ -65,10 +62,15 @@ body {
     border-radius: 10px;
 }
 
+#head-table {
+    display: flex;
+    justify-content: space-between;
+    margin: 100px;
+}
 
-
-
-
+#tabela {
+    margin-top: 150px;
+}
 
 #rodape{
     display: flex;
