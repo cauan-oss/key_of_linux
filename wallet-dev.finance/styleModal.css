@@ -3,20 +3,69 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: #1e293b;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+   position: absolute;
+   margin: 250px;
+   color: #1e293b;
+   font-family:Arial, Helvetica, sans-serif
 }
 
 #form {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   
-   margin: 50px;
-   border-radius: 5px;
-   background-color: blueviolet;
-   margin-top: 250px;
-   max-width: 200px auto;
+    background-color: rgb(206, 185, 185);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 200px;
+    border-radius: 5px;
+    width: 438px;
+    height: 380px
 }
 
-.entrada {
+.entradas {
+    width: 320px;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
 }
 
+
+#fields-input {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+#cancel {
+    color: red;
+    border: 1px solid red;
+    gap: 5px;
+    font-family: Poppins;
+    height: 30px;
+    width: 150px
+}
+
+#save {
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    color: white;
+    font-family: Poppins;
+}
+
+#botoes {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+
+}

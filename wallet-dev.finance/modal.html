@@ -5,17 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleModal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+        rel="stylesheet">
     <title>Transaction</title>
 </head>
 
 <body>
-   <form id="form" action="">
-          
-         <label for="description"></label>
-         <input   placeholder="Descrição" class="entradas" name="description" type="text">
-         <label for="value"></label>
-         <input class="entradas" name="value" type="number">
-   </form>
+     <h1>Nova Transação</h1> 
+    <form id="form" action="">
+        <div id="fields-input">
+            <label for="description"></label>
+            <input placeholder="Descrição" class="entradas" name="description" type="text">
+            <label for="value"></label>
+            <input  placeholder="0,00" class="entradas" name="value" type="number">
+            <label for="datas"></label>
+            <input name="datas" class="entradas" type="date">
+        </div>
+        <div id="botoes">
+            <button id="cancel">Cancelar</button>
+            <button id="save">Salvar</button>
+        </div>
+
+    </form>
 </body>
 
 </html>
