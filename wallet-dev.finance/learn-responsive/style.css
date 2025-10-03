@@ -22,3 +22,11 @@ main {
 img {
     border-radius: 5px;
 }
+
+@media screen and (max-width: 768px) and (min-width: 460px) {
+
+  body {
+    background-color: red;
+  }
+}
+
