@@ -43,6 +43,20 @@ body {
 
 }
 
+#tabela {
+  background-color: #2D4A22;
+  width: 100%;
+  text-align: left;
+  position: absolute;
+  top: 400px;
+  left: 400px;
+ 
+}
+
+table td {
+    background-color: white;
+    border-collapse: collapse;
+}
 @media screen and (max-width: 1634px) {
     #receita {
         display: flex;
