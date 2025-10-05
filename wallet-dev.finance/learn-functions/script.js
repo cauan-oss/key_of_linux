@@ -3,11 +3,11 @@ const pirilampoCustomers = ["Noel", "Carol", "Angelo", "Kissila"];
 
 
 function findElement(array, element) {
-    for(let index = 0; index < array.length; index += 1){
-        if(element == array[index]) {
-            console.log("o nome", array[index])
-        } 
-    }
+   const verify = array.includes(element)
+   console.log(verify)
+   if(!verify) {
+    console.log("Esse elemento nao existe")
+   }
 }
 
-findElement(trybeBanckCustomers, "Nat")
+findElement(trybeBanckCustomers, "Cauan")
