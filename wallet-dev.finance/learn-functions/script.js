@@ -10,4 +10,4 @@ function findElement(array, element) {
     }
 }
 
-findElement(trybeBanckCustomers, "Nat")
+findElement(trybeBanckCustomers, "Cauan")
