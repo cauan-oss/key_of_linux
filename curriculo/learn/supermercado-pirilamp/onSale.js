@@ -6,21 +6,21 @@ function onSaleProducts() {
         description: '',
         formatedPricce: '',
         onSale: false
-    }] 
+    }]
     /* a função irá retornar uma nova lista de objetos 
     com as propriedades de descrição, o valor formatado 
     do produto e a informação booleana de oferta. 
     armazenar os valores que estao em true e comparar com o onSale 
     */
-   let testando
     for (index = 0; index < stockProducts.length; index += 1) {
-        testando = verifyBool.push(stockProducts[index].onSale)
-        
+        if (stockProducts[index].onSale) {
+            verifyBool.push(productOnSale.description = stockProducts[index].description,
+                productOnSale.formatedPricce = stockProducts[index].price.toString(),
+                productOnSale.onSale = stockProducts[index].onSale)
+        }
     }
-    console.log(testando)
-
-   /*  return productOnSale */
-
+    return productOnSale
+  
 }
 
 console.log(onSaleProducts())
