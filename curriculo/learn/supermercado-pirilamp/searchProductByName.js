@@ -27,4 +27,4 @@ function SearchProductByName(name) {
     }
    
 }
-console.log(SearchProductByName("Azeite"))
+SearchProductByName("Azeite")
