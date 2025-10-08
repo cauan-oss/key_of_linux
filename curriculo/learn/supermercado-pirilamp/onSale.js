@@ -2,11 +2,11 @@ const stockProducts = require("./data.json");
 
 function onSaleProducts() {
     let verifyBool = []
-    let productOnSale = [{
+    let productOnSale = {
         description: '',
         formatedPricce: '',
         onSale: false
-    }]
+    }
     /* a função irá retornar uma nova lista de objetos 
     com as propriedades de descrição, o valor formatado 
     do produto e a informação booleana de oferta. 
@@ -14,12 +14,13 @@ function onSaleProducts() {
     */
     for (index = 0; index < stockProducts.length; index += 1) {
         if (stockProducts[index].onSale) {
-            verifyBool.push(productOnSale.description = stockProducts[index].description,
-                productOnSale.formatedPricce = stockProducts[index].price.toString(),
-                productOnSale.onSale = stockProducts[index].onSale)
+            productOnSale.description = stockProducts[index].description
+            productOnSale.formatedPricce = `R$${stockProducts[index].price.toString()}`
+            productOnSale.onSale  = stockProducts[index].onSale
+            verifyBool.push(productOnSale)
         }
     }
-    return productOnSale
+    return  verifyBool
   
 }
 
