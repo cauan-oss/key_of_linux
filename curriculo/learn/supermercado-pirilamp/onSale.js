@@ -7,24 +7,34 @@ function onSaleProducts() {
     do produto e a informação booleana de oferta. 
     armazenar os valores que estao em true e comparar com o onSale 
     */
-   /*  for (let index = 0; index < stockProducts.length; index += 1) {
+    /*  for (let index = 0; index < stockProducts.length; index += 1) {
+         if (stockProducts[index].onSale) {
+             
+             //console.table(productOnSale);
+             arrayFinish.push({
+                 description: stockProducts[index].description,
+                 formatedPricce: `R$${stockProducts[index].price.toString()}`,
+                 onSale: stockProducts[index].onSale
+             })
+         }
+     } */
+
+    /* for (let index in stockProducts) {
         if (stockProducts[index].onSale) {
-            
-            //console.table(productOnSale);
             arrayFinish.push({
                 description: stockProducts[index].description,
-                formatedPricce: `R$${stockProducts[index].price.toString()}`,
+                formatedPricce: `R${stockProducts[index].price}`,
                 onSale: stockProducts[index].onSale
             })
         }
     } */
 
-        for(let index in stockProducts){
-            if(stockProducts[index].onSale){
+        for(let index of stockProducts){
+            if(index.onSale){
                 arrayFinish.push({
-                    description: stockProducts[index].description,
-                    formatedPricce: `R${stockProducts[index].price}`,
-                    onSale: stockProducts[index].onSale
+                    description: index.description,
+                    formatedPricce: index.price,
+                   onSale: index.onSale
                 })
             }
         }
