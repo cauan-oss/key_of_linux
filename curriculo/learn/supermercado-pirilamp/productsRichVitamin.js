@@ -1,16 +1,20 @@
 const stockProducts = require("./data.json");
 
-function getProductsRichVitain () {
-    let listWithVitamin = []
-     for(let index = 0; index < stockProducts.length; index += 1){
-          if(stockProducts[index].nutritionalInfo.vitamins !== undefined) {
-               listWithVitamin.push({
-                description: stockProducts[index].description,
-                formattedPrice: `R$${stockProducts[index].price}`,
-                vitaminsInformation: `${stockProducts[index].nutritionalInfo.vitamins}`
-               })
+function getProductsRichVitain() {
+     let listWithVitamin = []
+     
+     for (let index = 0; index < stockProducts.length; index += 1) {
+          if (stockProducts[index].nutritionalInfo.vitamins !== undefined) {
+               let quantityVitamin = Object.keys(stockProducts[index].nutritionalInfo.vitamins)
+               for(let j = 0; j < quantityVitamin.length; j += 1){
+                    if(quantityVitamin[j] === stockProducts[index].nutritionalInfo.vitamins){
+                         console.log(stockProducts[index].nutritionalInfo.vitamins)
+                    }
+               }
+
           }
      }
+    //console.log(quantityVitamin)
      return listWithVitamin
 }
 
