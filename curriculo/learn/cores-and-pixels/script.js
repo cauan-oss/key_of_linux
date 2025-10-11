@@ -15,6 +15,14 @@ function insertColorInTheSquares() {
     }
 }
 
+
+function buttonColorRandom () {
+    const button = document.getElementById("button-random-color");
+    button.addEventListener('click', () => {
+        return insertColorInTheSquares()
+    })
+}
+buttonColorRandom()
 insertColorInTheSquares()
 console.log(createColorRandom()) 
 
