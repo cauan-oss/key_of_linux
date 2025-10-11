@@ -1,15 +1,34 @@
-function createColorRandom() {
-    const lisWithNumber = []
-    const square = document.getElementsByClassName('color')
-    console.log(square)
-    for(let index = 0; index < square.length; index += 1){
-        lisWithNumber.push(Math.ceil(Math.random() * (255 - 0)))
-    } 
-    return lisWithNumber
+
+function createColorRandom () {
+    const r =  Math.ceil(Math.random() * 255);
+    const g =  Math.ceil(Math.random() * 255);
+    const b =  Math.ceil(Math.random() * 255);
+    const colorRandom = `rgb(${r}, ${g}, ${b})`
+    return colorRandom
 }
-/* terei quatro cores, mas como vou fazer isso ?
- 1 - gera um numero aleatorio de 0 a 255
- 3  - percorre o array de classes kkkk
- 2 -adiciona esse numero no background
-*/
-console.log(createColorRandom())
+
+function insertColorInTheSquares() {
+    const squares = document.getElementsByClassName("color");
+    for(let index = 1; index < squares.length; index += 1) {
+        squares[index].style.backgroundColor = createColorRandom()
+        squares[0].style.backgroundColor = 'black'
+    }
+}
+
+insertColorInTheSquares()
+console.log(createColorRandom()) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
