@@ -1,4 +1,4 @@
-class Botton {
+/* class Botton {
     idBotton = "";
     constructor (idBotton) {
            this.idBotton = idBotton
@@ -31,7 +31,7 @@ text.getButton().addEventListener('mouseover', () => {
 botao1.changeText('Hello world');
 botao1.changeBackground('red', 'right');
 
-
+ */
 
 
 
