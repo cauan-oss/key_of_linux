@@ -9,28 +9,25 @@ function colorRandom() {
   let color = `rgb(${r}, ${g}, ${b})`;
   return color
 }
-let lista = []
-function insertColor() {
+
+function colorWithBotton() {
+  let listWithColor = [];
+  let listWithLocal = [];
+  let convertInString;
   for (let index = 0; index < box.length; index += 1) {
     box[index].style.backgroundColor = colorRandom()
-    lista.push(box[index].style.backgroundColor)
-    for(let indice = 0; indice < lista.length; indice += 1) {
-      if(lista[indice] !== box[index].style.backgroundColor) {
-        lista.splice(index)
-      }
-    }
-    console.log('comparando', lista)
+    listWithColor.push(box[index].style.backgroundColor);
+    convertInString = JSON.stringify(listWithColor);
   }
-}
-
-function insertInTheLocal () {
-  for(let index = 0; index < box.length; index += 1) {
-      console.log('retorna', box[index])
-  }
+  localStorage.setItem('colorPalette', convertInString);
+  const myLocal = localStorage.getItem('colorPalette');
+  const tranformeInObj = JSON.parse(myLocal)
+  for (let index = 0; index < box.length; index += 1) {
+    box[index].style.backgroundColor = tranformeInObj[index]
+   }
+  console.log('local', tranformeInObj)
 }
 
 myButton.addEventListener('click', () => {
-  insertColor()
-  insertInTheLocal()
+  colorWithBotton()
 })
-insertColor()
