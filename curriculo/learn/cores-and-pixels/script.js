@@ -21,7 +21,8 @@ function insertColorInTheSquares() {
  1  quando abrir a pagina gere cores aleatorias ok
  2- quando eu clicar no botao crie novas cores - ok
  3 quando eu clicar no botao salve no localStorage -ok 
- 4 quando eu recarregar a pagina retorne um console com local em formato de array
+ 4 quando eu recarregar a pagina mantenha a paleta com as mesmas cores - ok
+ 5 quando abrir a pagina a cor preta ja deve estar seleciona para pintar os quadrados
 */
 function buttonCreateNewColors() {
     insertColorInTheSquares()

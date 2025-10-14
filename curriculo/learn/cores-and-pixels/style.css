@@ -20,3 +20,14 @@ body {
     color: aliceblue;
     background-color: green;
 }
+
+#pixel-board {
+    display: flex;
+    margin-top: 45px;
+    gap: 15px;
+}
+
+.pixel {
+    border: 1px solid black;
+    padding: 50px;
+}
