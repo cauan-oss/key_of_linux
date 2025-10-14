@@ -1,5 +1,7 @@
 
 const squares = document.getElementsByClassName("color");
+const aquarela = document.querySelector("#pixel-board");
+const boxSquares = document.querySelectorAll(".pixel");
 function createColorRandom() {
     const r = Math.ceil(Math.random() * 255);
     const g = Math.ceil(Math.random() * 255);
@@ -11,10 +13,11 @@ function createColorRandom() {
 
 let listValuesForLocal = [];
 function insertColorInTheSquares() {
-    for(let index = 1; index < squares.length; index += 1) {
+    for (let index = 1; index < squares.length; index += 1) {
         squares[index].style.backgroundColor = createColorRandom()
     }
     squares[0].style.backgroundColor = 'black'
+    localStorage.setItem('black', squares[0].style.backgroundColor)
 }
 
 /*
@@ -27,8 +30,8 @@ function insertColorInTheSquares() {
 function buttonCreateNewColors() {
     insertColorInTheSquares()
     let saveOfLocal = [];
-    for(let index = 0; index < squares.length; index += 1) {
-         saveOfLocal.push(squares[index].style.backgroundColor)
+    for (let index = 0; index < squares.length; index += 1) {
+        saveOfLocal.push(squares[index].style.backgroundColor)
     }
     let convertListInString = JSON.stringify(saveOfLocal)
     localStorage.setItem('colorPalette', convertListInString);
@@ -36,18 +39,50 @@ function buttonCreateNewColors() {
 }
 
 
-function getColorOfLocal () {
+function getColorOfLocal() {
     let getOfLocal = JSON.parse(localStorage.getItem('colorPalette'));
-    for(let i in getOfLocal) {
+    for (let i in getOfLocal) {
         squares[i].style.backgroundColor = getOfLocal[i]
     }
 
 }
 
 
+/* Quando eu clicar no quadrado ele deve adicionar a cor preta 
+ 1 colocar um evento de click para cada um dos quadros 
+*/
+
+
 const button = document.getElementById("button-random-color");
 button.addEventListener('click', () => {
-   buttonCreateNewColors()
+    buttonCreateNewColors()
+})
+
+/* Quando eu passar o mouse em cima de um quadrado ele vai salvar o valor do indice
+do quadrado no cookie
+
+o que eu quero salvar no cookie ? o indice ?
+*/
+/* function paintBoxOfSquares () {
+   let black = localStorage.getItem('black');
+  como vou usar o appendChild ?
+} */
+/* quando clicar em texto ele vai ficar vermelho, quando clicar em outro quadrado, 
+ele vai, tirar texto do quadrado anterior e vai para novo quadrado  */
+let myTexto;
+const elementFather = document.getElementsByClassName("pixel")
+aquarela.addEventListener('click', (param) => {
+    if (param.target.id === 'text') {
+        myTexto = param.target
+        console.log('param', myTexto.textContent)
+        param.target.style.backgroundColor = 'red'
+    }
+    if (param.target.className === 'pixel') {
+        const elementCreate = document.createElement('p')
+        elementCreate.textContent = myTexto.textContent
+        console.log(elementCreate)
+        param.target.appendChild(elementCreate)
+    }
 })
 insertColorInTheSquares()
 getColorOfLocal()
