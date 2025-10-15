@@ -3,6 +3,7 @@ const squares = document.querySelectorAll(".color");
 const aquarela = document.querySelector("#pixel-board");
 const boxSquares = document.querySelectorAll(".pixel");
 const colorPalette = document.getElementById('color-palette');
+const clean = document.getElementById("clear-board");
 function createColorRandom() {
     const r = Math.ceil(Math.random() * 255);
     const g = Math.ceil(Math.random() * 255);
@@ -58,7 +59,7 @@ aquarela.addEventListener('click', (param) => {
 
    }
 })
-/* quando eu clicar as cores aparecem no cookies */
+
 
 colorPalette.addEventListener('click', (param) => {
     for (let index = 0; index < squares.length; index += 1) {
@@ -70,6 +71,12 @@ colorPalette.addEventListener('click', (param) => {
         param.target.style.backgroundColor = document.cookie
     }
 
+})
+
+clean.addEventListener('click', () => {
+     for(let index = 0; index < squares.length; index += 1){
+        squares[index].style.backgroundColor = 'white'
+     }
 })
 
 
