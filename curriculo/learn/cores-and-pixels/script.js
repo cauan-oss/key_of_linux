@@ -79,16 +79,22 @@ clean.addEventListener('click', () => {
     }
 })
 
-/* function savingDesign () {
+ function savingDesign () {
    
     const convertingInArray = JSON.parse(localStorage.getItem('pixelBoard'))
     console.log('help', convertingInArray)
+    for(let i in convertingInArray) {
+        boxSquares[i].style.backgroundColor = convertingInArray[i]
+    }
 }
-savingDesign() */
+savingDesign()
 
-aquarela.addEventListener('click', (param) => {
-    const insertInTheList = param.target.style.backgroundColor
-    console.log('aqui', insertInTheList) 
+aquarela.addEventListener('click', () => {
+    let listWithColors = [];
+    for(let index = 0; index < boxSquares.length; index += 1) {
+       listWithColors.push(boxSquares[index].style.backgroundColor)
+    }
+   localStorage.setItem('pixelBoard', JSON.stringify(listWithColors))
 })
 
 insertColorInTheSquares()
