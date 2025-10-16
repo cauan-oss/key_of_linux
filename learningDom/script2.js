@@ -10,24 +10,29 @@ function colorRandom() {
   return color
 }
 
-function colorWithBotton() {
-  let listWithColor = [];
-  let listWithLocal = [];
-  let convertInString;
+function createColorsRandom() {
+  let listForLocal = [];
   for (let index = 0; index < box.length; index += 1) {
     box[index].style.backgroundColor = colorRandom()
-    listWithColor.push(box[index].style.backgroundColor);
-    convertInString = JSON.stringify(listWithColor);
+    listForLocal.push(box[index].style.backgroundColor)
   }
-  localStorage.setItem('colorPalette', convertInString);
-  const myLocal = localStorage.getItem('colorPalette');
-  const tranformeInObj = JSON.parse(myLocal)
-  for (let index = 0; index < box.length; index += 1) {
-    box[index].style.backgroundColor = tranformeInObj[index]
-   }
-  console.log('local', tranformeInObj)
+  let convertInString = JSON.stringify(listForLocal)
+  console.log('lista aqui', listForLocal)
+  localStorage.setItem('colorPalette', convertInString)
+}
+
+
+
+function colorWithBotton() {
+  let getLocal = JSON.parse(localStorage.getItem('colorPalette'))
+  for(let i in getLocal) {
+       box[i].style.backgroundColor = getLocal[i]
+  }
+  console.log('trazendo do local', getLocal)
+  
 }
 
 myButton.addEventListener('click', () => {
-  colorWithBotton()
+ createColorsRandom()
 })
+colorWithBotton()

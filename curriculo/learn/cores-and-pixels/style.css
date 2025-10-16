@@ -14,9 +14,29 @@ body {
     border: 1px solid rgb(0, 0, 0);
     margin: 10px;
 }
+.selected {
+    padding: 40px;
+    border: 1px solid rgb(0, 0, 0);
+    margin: 10px;
+}
 
 #button-random-color {
     border-radius: 5px;
     color: aliceblue;
     background-color: green;
+}
+
+#pixel-board {
+    display: flex;
+    margin-top: 45px;
+    gap: 15px;
+}
+
+.pixel {
+    border: 1px solid black;
+    padding: 50px;
+}
+
+#board-size {
+    border-radius: 5px;
 }

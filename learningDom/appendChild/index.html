@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício - Galeria Dinâmica</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f0f0; }
+        .container { max-width: 900px; margin: 2rem auto; padding: 1rem; }
+        .controles { background-color: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .controles input { width: 300px; padding: 8px; margin-right: 10px; }
+        .galeria { display: flex; flex-wrap: wrap; gap: 15px; }
+        .item-galeria { background-color: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 200px; }
+        .item-galeria img { max-width: 100%; height: auto; display: block; }
+        .item-galeria p { text-align: center; margin: 10px 0 0; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Minha Galeria de Imagens</h1>
+        <div class="controles">
+            <input type="text" id="urlInput" placeholder="URL da imagem...">
+            <input type="text" id="legendaInput" placeholder="Legenda da imagem...">
+            <button id="adicionarBtn">Adicionar Imagem</button>
+        </div>
+        <div id="galeriaContainer" class="galeria">
+            </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
