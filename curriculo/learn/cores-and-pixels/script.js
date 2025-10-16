@@ -105,6 +105,12 @@ function lengthSquares () {
         estilos = boxSquares[index]
         estilos.style.width = getValueOfInput
         estilos.style.height = getValueOfInput
+        if(sizeInput.value <= 5) {
+            sizeInput.value = 5
+        }
+        if(sizeInput.value >= 50) {
+            sizeInput.value = 50
+        }
     } 
     console.log(getValueOfInput)
     if(getValueOfInput === 'px') {
