@@ -54,10 +54,10 @@ aquarela.addEventListener('click', (param) => {
     for (let index = 0; index < squares.length; index += 1) {
         console.log('show', squares[index].style.backgroundColor)
         if (squares[index].classList.value === 'selected') {
-             param.target.style.backgroundColor = squares[index].style.backgroundColor
+            param.target.style.backgroundColor = squares[index].style.backgroundColor
         }
 
-   }
+    }
 })
 
 
@@ -74,12 +74,22 @@ colorPalette.addEventListener('click', (param) => {
 })
 
 clean.addEventListener('click', () => {
-     for(let index = 0; index < squares.length; index += 1){
+    for (let index = 0; index < squares.length; index += 1) {
         squares[index].style.backgroundColor = 'white'
-     }
+    }
 })
 
+/* function savingDesign () {
+   
+    const convertingInArray = JSON.parse(localStorage.getItem('pixelBoard'))
+    console.log('help', convertingInArray)
+}
+savingDesign() */
 
+aquarela.addEventListener('click', (param) => {
+    const insertInTheList = param.target.style.backgroundColor
+    console.log('aqui', insertInTheList) 
+})
 
 insertColorInTheSquares()
 getColorOfLocal()
