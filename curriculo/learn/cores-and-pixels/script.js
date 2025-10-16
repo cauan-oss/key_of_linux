@@ -31,7 +31,7 @@ function buttonCreateNewColors() {
     }
     let convertListInString = JSON.stringify(saveOfLocal)
     localStorage.setItem('colorPalette', convertListInString);
-    console.log(convertListInString)
+
 }
 
 
@@ -53,7 +53,6 @@ const elementFather = document.getElementsByClassName("pixel")
 aquarela.addEventListener('click', (param) => {
     param.target.style.backgroundColor = 'black'
     for (let index = 0; index < squares.length; index += 1) {
-        console.log('show', squares[index].style.backgroundColor)
         if (squares[index].classList.value === 'selected') {
             param.target.style.backgroundColor = squares[index].style.backgroundColor
         }
@@ -80,11 +79,10 @@ clean.addEventListener('click', () => {
     }
 })
 
- function savingDesign () {
-   
+function savingDesign() {
+
     const convertingInArray = JSON.parse(localStorage.getItem('pixelBoard'))
-    console.log('help', convertingInArray)
-    for(let i in convertingInArray) {
+    for (let i in convertingInArray) {
         boxSquares[i].style.backgroundColor = convertingInArray[i]
     }
 }
@@ -92,34 +90,44 @@ savingDesign()
 
 aquarela.addEventListener('click', () => {
     let listWithColors = [];
-    for(let index = 0; index < boxSquares.length; index += 1) {
-       listWithColors.push(boxSquares[index].style.backgroundColor)
+    for (let index = 0; index < boxSquares.length; index += 1) {
+        listWithColors.push(boxSquares[index].style.backgroundColor)
     }
-   localStorage.setItem('pixelBoard', JSON.stringify(listWithColors))
+    localStorage.setItem('pixelBoard', JSON.stringify(listWithColors))
 })
 
-function lengthSquares () {
+function lengthSquares() {
     const getValueOfInput = `${sizeInput.value}px`
-   let estilos ;
+    const convertInNumber = parseInt(getValueOfInput)
+    const listOfLength = []
+    let converLengthInString
+    console.log(convertInNumber)
     for (let index = 0; index < boxSquares.length; index += 1) {
-        estilos = boxSquares[index]
-        estilos.style.width = getValueOfInput
-        estilos.style.height = getValueOfInput
-        if(sizeInput.value <= 5) {
-            sizeInput.value = 5
+        const squares = boxSquares[index]
+        console.log('squares', listOfLength)
+        squares.style.width = `${convertInNumber}px`
+        squares.style.height = `${convertInNumber}px`
+        if (convertInNumber < 5) {
+            squares.style.width = `${5}px`
+            squares.style.height = `${5}px`
         }
-        if(sizeInput.value >= 50) {
-            sizeInput.value = 50
+        if (convertInNumber > 50) {
+            squares.style.width = `${50}px`
+            squares.style.height = `${50}px`
         }
-    } 
-    console.log(getValueOfInput)
-    if(getValueOfInput === 'px') {
-        alert("Board inválido!")
+         listOfLength.push(squares.style.width, squares.style.height);
+         converLengthInString = JSON.stringify(listOfLength)
+         console.log('string', converLengthInString)
+        }
+    localStorage.setItem('pixelBoard', converLengthInString);
+    if (!sizeInput.value) {
+        alert('board Invalido')
     }
 }
 
 boardSize.addEventListener('click', () => {
     lengthSquares()
+
 })
 
 insertColorInTheSquares()
