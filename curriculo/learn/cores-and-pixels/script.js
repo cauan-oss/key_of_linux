@@ -1,9 +1,10 @@
-
 const squares = document.querySelectorAll(".color");
 const aquarela = document.querySelector("#pixel-board");
 const boxSquares = document.querySelectorAll(".pixel");
 const colorPalette = document.getElementById('color-palette');
 const clean = document.getElementById("clear-board");
+const sizeInput = document.getElementById("board-size");
+const boardSize = document.getElementById("generate-board")
 function createColorRandom() {
     const r = Math.ceil(Math.random() * 255);
     const g = Math.ceil(Math.random() * 255);
@@ -95,6 +96,24 @@ aquarela.addEventListener('click', () => {
        listWithColors.push(boxSquares[index].style.backgroundColor)
     }
    localStorage.setItem('pixelBoard', JSON.stringify(listWithColors))
+})
+
+function lengthSquares () {
+    const getValueOfInput = `${sizeInput.value}px`
+   let estilos ;
+    for (let index = 0; index < boxSquares.length; index += 1) {
+        estilos = boxSquares[index]
+        estilos.style.width = getValueOfInput
+        estilos.style.height = getValueOfInput
+    } 
+    console.log(getValueOfInput)
+    if(getValueOfInput === 'px') {
+        alert("Board inválido!")
+    }
+}
+
+boardSize.addEventListener('click', () => {
+    lengthSquares()
 })
 
 insertColorInTheSquares()
