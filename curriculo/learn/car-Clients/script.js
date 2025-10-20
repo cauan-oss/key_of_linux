@@ -1,12 +1,12 @@
 class Veiculo {
     //atributos 
-    #marca
+    #marca 
     #ano
     #preco
 
     constructor(marca, ano, preco) {
         this.#marca = marca
-        this.ano = ano
+        this.#ano = ano
         this.#preco = preco 
     }
 
@@ -20,7 +20,7 @@ class Veiculo {
 
     }
     calculaIpva(tabelaIpva) {
-
+       
     }
 
     calcularValorSeguro(){
@@ -28,12 +28,16 @@ class Veiculo {
     }
 }
 
-const concessionaria = new Veiculo();
-concessionaria.marca = 'Volkswagen';
-concessionaria.ano = '2022';
-concessionaria.preco = '200000';
-concessionaria.alterarPreco(100)
-console.log('getPrice', concessionaria.getPreco())
+const concessionaria = new Veiculo('vw', '2025', 20000);
+//concessionaria.alterarPreco(100)
+//console.log('getPrice', concessionaria.marca)
+concessionaria.calculaIpva(2006)
+const tabelaIpva = { 
+taxaAcima2005: 0.04,  // 4% 
+taxaAte2005: 0.025    // 2.5% 
+};
+console.log(concessionaria.calculaIpva(tabelaIpva))
+
 /* Tabela de Alíquotas do IPVA: 
 const tabelaIpva = { 
 taxaAcima2005: 0.04,  // 4% 
