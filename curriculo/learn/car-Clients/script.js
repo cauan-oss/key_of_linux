@@ -33,7 +33,7 @@ class Veiculo {
   }
 
   calcularValorSeguro(tabelaSeguro) {
-      this.#preco
+    this.#preco
   }
 }
 
@@ -62,8 +62,8 @@ class Moto extends Veiculo {
     console.log(this.getDetalhes)
   }
   calcularValorSeguro(tabelaSeguro) {
-     const calculeFatorMoto = this.getPreco() * tabelaSeguro.fatorMoto
-     return calculeFatorMoto
+    const calculeFatorMoto = this.getPreco() * tabelaSeguro.fatorMoto
+    return calculeFatorMoto
   }
 }
 
@@ -77,18 +77,18 @@ class Caminhao extends Veiculo {
   }
 
   calcularValorSeguro(tabelaSeguro) {
-     const calculeFatorCaminhao = this.getPreco() * tabelaSeguro.fatorCaminhao
-     return calculeFatorCaminhao
+    const calculeFatorCaminhao = this.getPreco() * tabelaSeguro.fatorCaminhao
+    return calculeFatorCaminhao
   }
 }
 
 class Cliente {
-  constructor(nome, cpf){
+  constructor(nome, cpf) {
     this.nome = nome;
     this.cpf = cpf
   }
-  getDados(){
-    return `${this.nome} e ${ this.cpf } do cliente`
+  getDados() {
+    return `${this.nome} e ${this.cpf} do cliente`
   }
 }
 
@@ -102,25 +102,60 @@ class Concessionaria {
   cadastrarClientes(cliente) {
     this.clienteCadastrados.push(cliente)
   }
-  adicionarVeiculo() {
-
+  adicionarVeiculo(veiculo) {
+    this.estoque.push(veiculo)
   }
   listarVeiculo() {
-
+    return this.estoque
   }
   buscarPorMarca() {
 
   }
-  venderVeiculo(modelo, cpfCliente){
-      for (const element of ) {
-        
+  venderVeiculo(cpfCliente, modelo) {
+    const horario = new Date()
+    const cliente = {
+      clienteComprador: '',
+      veiculoVendido: '',
+      data: `${horario.getHours()}:${horario.getMinutes()}`
+    }
+    for (let index = 0; index < this.clienteCadastrados.length; index += 1) {
+      if (this.clienteCadastrados[index] === cpfCliente) {
+        cliente.clienteComprador = this.clienteCadastrados[index]
+        this.clienteCadastrados.splice(index, 1)
       }
+    }
+    if (cliente.clienteComprador !== cpfCliente) {
+      console.log('cliente nao encontrado')
+    }
+    for (let index = 0; index < this.estoque.length; index += 1) {
+      if (this.estoque[index] === modelo) {
+        cliente.veiculoVendido = this.estoque[index]
+        //this.historicoDeVendas.push(cliente)
+        this.estoque.splice(index, 1)
+      } 
+    }
+     if (cliente.veiculoVendido !== modelo) {
+      console.log('veiculo nao encontrado')
+    }
+    this.historicoDeVendas.push(cliente)
   }
+
 }
 
 
+
 const inserindo = new Veiculo('vw', '2003', 20000);
-console.log(inserindo.getDetalhes())
+const inspect = new Concessionaria();
+inspect.cadastrarClientes('geraldo');
+inspect.cadastrarClientes('Nexus');
+inspect.cadastrarClientes('wellinton');
+inspect.cadastrarClientes('luis')
+inspect.adicionarVeiculo('jetta');
+inspect.adicionarVeiculo('golfera');
+
+inspect.venderVeiculo('felca', 'buzao');
+
+console.log(inspect)
 
 
 const tabelaSeguro = {
@@ -137,4 +172,5 @@ const tabelaIpva = {
   taxaAcima2005: 0.04,  // 4% 
   taxaAte2005: 0.025    // 2.5% 
 };
+
 
