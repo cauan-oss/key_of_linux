@@ -140,6 +140,15 @@ class Concessionaria {
     this.historicoDeVendas.push(cliente)
   }
 
+  calcularValorTotalDoEstoque(){
+       
+  }
+  gerarRelatorioDeVendas(){
+      for(let index = 0; index < this.historicoDeVendas.length; index += 1){
+          console.log(this.historicoDeVendas[index]);
+      }
+  }
+
 }
 
 
@@ -153,9 +162,14 @@ inspect.cadastrarClientes('luis')
 inspect.adicionarVeiculo('jetta');
 inspect.adicionarVeiculo('golfera');
 
-inspect.venderVeiculo('felca', 'buzao');
+inspect.cadastrarClientes('solage')
+inspect.adicionarVeiculo('sonata');
 
-console.log(inspect)
+inspect.venderVeiculo('geraldo', 'golfera');
+
+console.log(inspect.gerarRelatorioDeVendas())
+
+//console.log(inspect)
 
 
 const tabelaSeguro = {
