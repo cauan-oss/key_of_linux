@@ -13,7 +13,7 @@ class Veiculos {
 
   }
   getPreco() {
-
+   return this.#preco
   }
   getDetalhes() {
     return `Marca do veiculo: ${this.#marca}, modelo: ${this.#modelo}, ano: ${this.#ano}, valor: ${this.#preco}`
