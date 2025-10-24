@@ -35,7 +35,9 @@ function iniciarBatalha(heroi, monstro) {
     /* continua executando se os dois estiverem vivos, ele para de executar se estiverem mortos  */
     while(heroi.estaVivo() && monstro.estaVivo()){
           heroi.atacar(monstro)
-          monstro.atacar(heroi)
+          if(heroi.estaVivo) {
+            monstro.atacar(heroi)
+          }
     }
 }
 
@@ -64,8 +66,8 @@ class Guerreiro extends Personagem {
 }
 
 class Mago extends Personagem {
-    constructor(mana, magia) {
-        super()
+    constructor(mana, magia, nome, vida, ataque, defesa) {
+        super(nome, vida, ataque, defesa)
         this.mana = mana
         this.magia = magia
     }
