@@ -12,3 +12,18 @@ fatorMoto: 0.07,
 // 7% sobre o valor do veículo 
 fatorCaminhao: 0.08   // 8% sobre o valor do veículo 
 };
+
+class Veiculos {
+  #marca
+  #modelo
+  #ano
+  #preco 
+  constructor(marca, modelo, ano, preco){
+       this.#marca = marca
+       this.#modelo = modelo
+       this.#ano = ano 
+       this.#preco = preco
+  }
+
+  
+}
