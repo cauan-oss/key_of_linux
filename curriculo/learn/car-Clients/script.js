@@ -24,6 +24,15 @@ class Veiculos {
        this.#ano = ano 
        this.#preco = preco
   }
+  alterarPreco(novoPreco) {
 
-  
+  }
+  getPreco(){
+
+  }
+  getDetalhes(){
+    
+  }
+
+
 }
