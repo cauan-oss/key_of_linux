@@ -12,6 +12,10 @@ class Carro extends Veiculos {
     getDetalhes() {
         return `Portas: ${this.numeroDePortas}`
     }
+    getPreco() {
+        /* OUTRA FORMA DE RESOLVER */
+        return super.getPreco()
+    }
     calcularValorSerguro(tabelaSeguro) {
         const valorDoVeiculo = this.getPreco();
         return valorDoVeiculo * tabelaSeguro.fatorCarro
