@@ -10,7 +10,7 @@ class Carro extends Veiculos {
 
     }
     getDetalhes() {
-        return `Portas: ${this.numeroDePortas}`
+       return ` ${super.getDetalhes()}, Portas: ${this.numeroDePortas}` 
     }
     getPreco() {
         /* OUTRA FORMA DE RESOLVER */

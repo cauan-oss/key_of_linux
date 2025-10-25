@@ -50,7 +50,7 @@ class Concessionaria {
     }
     calcularValorTotal() {
       
-        
+
     }
 }
 
@@ -65,3 +65,5 @@ dado.adicionarVeiculo('prisma')
 dado.venderVeiculo('Geraldo', 'jetta')
 
 console.log(dado.calcularValorTotal())
+
+module.exports = Concessionaria 
