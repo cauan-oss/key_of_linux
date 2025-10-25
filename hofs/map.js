@@ -1,4 +1,4 @@
-const { produtos, tarefas } = require("./arquivo.js")
+const { produtos, tarefas, taxasPorCategoria, carrinho } = require("./arquivo.js")
 
 
 const cardapioFormatado = produtos.map((product) => {
@@ -13,4 +13,12 @@ const relatorioPendencias = tarefas.map((tarefa) => {
         return null
     }
 })
-console.log(relatorioPendencias)
+console.log()
+/* const carrinhoFinalizado = carrinho.map((car) => {
+    if(car.categoria ) {
+           return car.preco * 0.08
+    }
+})
+
+console.log(carrinhoFinalizado)
+ */
