@@ -5,25 +5,48 @@ class Personagem {
         this.ataque = ataque
         this.defesa = defesa
     }
-
     /* o parametro de atacar recebe personagem */
     atacar(alvo) {
-       alvo.receberDano(this.ataque)
+        alvo.receberDano(this.ataque)
     }
     receberDano(dano) {
-       // console.log(` Quantidade defesa:  ${this.defesa - dano}`)
         const calculaDefesa = this.defesa - dano
-        let calculaVida ;
-        if(calculaDefesa < 0) {
-          calculaVida = this.vida + calculaDefesa
-          console.log('vida', calculaVida);
+        this.defesa = calculaDefesa
+        if (calculaDefesa < 0) {
+            let calculaVida = this.vida + calculaDefesa
+            this.vida = calculaVida
+            console.log('vida', calculaVida);
         }
-        if(calculaVida <= 0) {
+        if (this.vida <= 0) {
             console.log('Personagem morreu')
         }
-       
+    }
+     estaVivo() {
+        if(this.vida > 0) {
+            return true
+        } else {
+            return false
+        }
     }
 }
+
+function iniciarBatalha(heroi, monstro) {
+
+    /* continua executando se os dois estiverem vivos, ele para de executar se estiverem mortos  */
+    while(heroi.estaVivo() && monstro.estaVivo()){
+          heroi.atacar(monstro)
+          if(heroi.estaVivo) {
+            monstro.atacar(heroi)
+          }
+    }
+}
+
+console.log('funcao aqui', iniciarBatalha())
+/* 
+Defina um laço de repetição que simule a passagem do tempo e as ações dos
+combatentes. A condição de parada desse laço deve ser a derrota de um dos lados.
+Estabeleça a ordem de ação: 
+quem ataca primeiro e como o controle passa para o próximo combatente. */
 
 class Guerreiro extends Personagem {
     constructor(forca, nome, vida, ataque, defesa) {
@@ -43,8 +66,8 @@ class Guerreiro extends Personagem {
 }
 
 class Mago extends Personagem {
-    constructor(mana, magia) {
-        super()
+    constructor(mana, magia, nome, vida, ataque, defesa) {
+        super(nome, vida, ataque, defesa)
         this.mana = mana
         this.magia = magia
     }
@@ -67,9 +90,9 @@ class Inventario {
     }
 }
 
-const robervaldo = new Personagem('robervaldo', 10, 10, 50)
+const robervaldo = new Personagem('robervaldo', 10, 95, 50)
 const chefao = new Personagem('chefao', 20, 15, 80)
 //const mostraDano = robervaldo.receberDano(510)
-const mostraAtaque = robervaldo.atacar(chefao)
+robervaldo.atacar(chefao)
 
-console.log(mostraAtaque)
+//console.log(chefao.defesa)
