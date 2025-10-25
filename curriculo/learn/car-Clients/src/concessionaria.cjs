@@ -21,17 +21,35 @@ class Concessionaria {
         this.estoque.push(novoVeiculo)
     }
     listarVeiculo() {
-
+         return this.estoque
     }
     buscarPorMarca() {
 
     }
-    venderVeiculo(nome, cpfCliente) {
+    venderVeiculo(nome, veiculo) {
+        const horario = new Date()
+        const historico = {
+                    nome: '', 
+                    veiculo: '',
+                    horarioDaVenda: `${horario.getHours()}:${horario.getMinutes()}`
+                 };
         this.clientesCadastrados.map((cliente) => {
             if (nome === cliente.nomeCliente) {
-                 this.clientesCadastrados.slice()
+                 this.clientesCadastrados.splice(cliente, 1)
+                 historico.nome = nome
             }
         })
+        this.estoque.map((carro) => {
+              if(carro.veiculo === veiculo) {
+                this.estoque.splice(carro, 1)
+                historico.veiculo = veiculo
+            } 
+        })
+        this.historicoDeVendas.push(historico)
+
+    }
+    calcularValorTotal() {
+        
     }
 }
 
@@ -43,7 +61,6 @@ dado.cadastrarClientes('Natalia');
 dado.adicionarVeiculo('jetta')
 dado.adicionarVeiculo('corolla')
 dado.adicionarVeiculo('prisma')
+dado.venderVeiculo('Geraldo', 'jetta')
 
-const meuArray = [4, 1, 2, 3]
-
-console.log(...meuArray)
+console.log(dado)
